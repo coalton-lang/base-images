@@ -1,9 +1,15 @@
 FROM debian:11
 
+LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-images
+LABEL org.opencontainers.image.description="Allegro CL base image for Coalton CI"
+LABEL org.opencontainers.image.licenses=MIT
+
 ARG ALLEGRO_VERSION=10.1
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ca-certificates \
   curl \
   bzip2 \
   && rm -rf /var/lib/apt/lists/*
