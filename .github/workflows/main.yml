@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+  schedule:
+    # Weekly on Tuesdays at 9am PST
+    - cron: "0 0 17 ? * TUE *"
+
 jobs:
   build-and-publish-images:
     runs-on: ubuntu-latest
