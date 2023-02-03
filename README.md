@@ -1,7 +1,7 @@
-# base-images
+# Base Images
 
-This repository contains base images for the [coalton](https://github.com/coalton-lang/coalton/) CI pipeline.
+This repository contains base images for the [Coalton](https://github.com/coalton-lang/coalton/) CI pipeline.
 
 The following implementations are supported:
-- [sbcl](./sbcl)
+- [SBCL](./sbcl)
 - [Allegro CL](./allegro)
