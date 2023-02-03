@@ -31,6 +31,7 @@ RUN curl -o sbcl-binary.tar.bz2 https://netactuate.dl.sourceforge.net/project/sb
 RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
  && sbcl --load quicklisp.lisp --eval "(quicklisp-quickstart:install)"
 
-COPY sbclrc /root/.sbclrc
+ENV SBCL_HOME=/lisp
+COPY sbclrc ${SBCL_HOME}/.sbclrc
 
 WORKDIR /lisp
