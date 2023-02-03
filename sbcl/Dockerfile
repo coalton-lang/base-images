@@ -1,12 +1,20 @@
 FROM debian:11
 
+LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-images
+LABEL org.opencontainers.image.description="SBCL base image for Coalton CI"
+LABEL org.opencontainers.image.licenses=MIT
+
 ARG SBCL_VERSION=2.3.0
 ARG SBCL_ARCH=x86-64
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install --no-install-recommends -y \
+  ca-certificates \
   curl \
   bzip2 \
+  libgmp10 \
+  libmpfr6 \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
