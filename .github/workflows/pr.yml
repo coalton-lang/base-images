@@ -1,0 +1,23 @@
+name: Build base images
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-images:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        LISP_IMPLEMENTATION: ["sbcl", "allegro"]
+
+    env:
+      ALLEGRO_LICENSE: ${{ secrets.ALLEGRO_LICENSE }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: |
+               docker build ${{ matrix.LISP_IMPLEMENTATION }} --build-arg ALLEGRO_LICENSE --tag ghcr.io/coalton-lang/${{ matrix.LISP_IMPLEMENTATION }}-base:latest
