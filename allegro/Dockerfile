@@ -10,6 +10,7 @@ ARG ALLEGRO_VERSION=10.1
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
+  git \
   curl \
   bzip2 \
   && rm -rf /var/lib/apt/lists/*

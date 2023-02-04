@@ -12,6 +12,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install --no-install-recommends -y \
   ca-certificates \
   curl \
+  git \
   bzip2 \
   libgmp10 \
   libmpfr6 \
