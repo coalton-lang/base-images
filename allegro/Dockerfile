@@ -35,6 +35,6 @@ RUN update.sh -u
 RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
  && alisp -L quicklisp.lisp -e "(quicklisp-quickstart:install)"
 
-COPY clinit.cl /root/.clinit.cl
+COPY siteinit.cl /usr/local/acl${ALLEGRO_VERSION}-smp.64/siteinit.cl
 
 WORKDIR /lisp
