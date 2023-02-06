@@ -1,4 +1,4 @@
 #-quicklisp
 (load "/root/quicklisp/setup.lisp")
 
-(setf ql:*local-project-directories* '("/lisp"))
+(setf (symbol-value (find-symbol "*LOCAL-PROJECT-DIRECTORIES*" :ql)) '("/lisp"))
