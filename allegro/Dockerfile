@@ -33,8 +33,10 @@ RUN update.sh -u
 
 # Download and install quicklisp
 RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
- && alisp -L quicklisp.lisp -e "(quicklisp-quickstart:install)"
+ && alisp -L quicklisp.lisp -e "(quicklisp-quickstart:install)" \
+ && rm quicklisp.lisp
 
 COPY siteinit.cl /usr/local/acl${ALLEGRO_VERSION}-smp.64/siteinit.cl
 
 WORKDIR /lisp
+CMD ["alisp"]
