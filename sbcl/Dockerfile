@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-image
 LABEL org.opencontainers.image.description="SBCL base image for Coalton CI"
 LABEL org.opencontainers.image.licenses=MIT
 
-ARG SBCL_VERSION=2.3.0
+ARG SBCL_VERSION=2.3.2
 ARG SBCL_ARCH=x86-64
 
 # Install dependencies
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 WORKDIR /src
 
 # Download and install sbcl
-RUN curl -o sbcl-binary.tar.bz2 https://netactuate.dl.sourceforge.net/project/sbcl/sbcl/${SBCL_VERSION}/sbcl-${SBCL_VERSION}-${SBCL_ARCH}-linux-binary.tar.bz2 \
+RUN curl -L -o sbcl-binary.tar.bz2 https://sourceforge.net/projects/sbcl/files/sbcl/${SBCL_VERSION}/sbcl-${SBCL_VERSION}-${SBCL_ARCH}-linux-binary.tar.bz2 \
  && tar xf sbcl-binary.tar.bz2 \
  && cd sbcl-${SBCL_VERSION}-${SBCL_ARCH}-linux \
  && ./install.sh \
