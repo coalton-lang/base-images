@@ -1,6 +1,8 @@
 name: Build and publish base images
 
 on:
+  workflow_dispatch: {}
+  
   push:
     branches: [ main ]
 
