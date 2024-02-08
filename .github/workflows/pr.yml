@@ -17,7 +17,7 @@ jobs:
       ALLEGRO_LICENSE: ${{ secrets.ALLEGRO_LICENSE }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build the Docker image
         run: |
                docker build ${{ matrix.LISP_IMPLEMENTATION }} --build-arg ALLEGRO_LICENSE --tag ghcr.io/coalton-lang/${{ matrix.LISP_IMPLEMENTATION }}-base:latest
