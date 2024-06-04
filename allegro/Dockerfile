@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-image
 LABEL org.opencontainers.image.description="Allegro CL base image for Coalton CI"
 LABEL org.opencontainers.image.licenses=MIT
 
-ARG ALLEGRO_VERSION=10.1
+ARG ALLEGRO_VERSION=11.0
 
 # Install dependencies
 ARG DEBIAN_FRONTEND=noninteractive
