@@ -1,10 +1,10 @@
-FROM debian:11
+FROM debian:12
 
 LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-images
 LABEL org.opencontainers.image.description="CCL base image for Coalton CI"
 LABEL org.opencontainers.image.licenses=MIT
 
-ARG CCL_VERSION=1.12.1
+ARG CCL_VERSION=1.13
 
 # Install dependencies
 ARG DEBIAN_FRONTEND=noninteractive
@@ -19,7 +19,7 @@ WORKDIR /src
 # Download and install ccl
 RUN curl -L -o ccl-binary.tar.gz https://github.com/Clozure/ccl/releases/download/v${CCL_VERSION}/ccl-${CCL_VERSION}-linuxx86.tar.gz \
   && tar xf ccl-binary.tar.gz -C /usr/local/src \
-  && rm ccl-binary.tar.gz 
+  && rm ccl-binary.tar.gz
 
 ENV PATH=/usr/local/src/ccl/scripts:${PATH}
 
