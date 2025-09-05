@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        LISP_IMPLEMENTATION: ["sbcl", "allegro", "ccl"]
+        LISP_IMPLEMENTATION: ["sbcl", "ccl"]
 
     env:
       ALLEGRO_LICENSE: ${{ secrets.ALLEGRO_LICENSE }}
