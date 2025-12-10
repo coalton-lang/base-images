@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:13
 
 LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-images
 LABEL org.opencontainers.image.description="SBCL base image for Coalton CI"
