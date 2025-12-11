@@ -36,5 +36,9 @@ RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
 ENV SBCL_HOME=/usr/local/lib/sbcl
 COPY sbclrc ${SBCL_HOME}/sbclrc
 
+# workaround for old quicklisp and new SBCL
+WORKDIR /extras
+RUN git clone https://github.com/melisgl/named-readtables.git
+
 WORKDIR /lisp
 CMD ["sbcl"]
