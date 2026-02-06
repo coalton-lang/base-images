@@ -39,6 +39,7 @@ COPY sbclrc ${SBCL_HOME}/sbclrc
 # workaround for old quicklisp and new SBCL
 WORKDIR /extras
 RUN git clone https://github.com/melisgl/named-readtables.git
+RUN git clone https://github.com/slburson/fset.git
 
 WORKDIR /lisp
 CMD ["sbcl"]
