@@ -1,10 +1,11 @@
 FROM debian:13
 
+# Forked from coalton-lang/base-images
 LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-images
 LABEL org.opencontainers.image.description="SBCL base image for Coalton CI"
 LABEL org.opencontainers.image.licenses=MIT
 
-ARG SBCL_VERSION=2.6.2
+ARG SBCL_VERSION=2.6.6
 ARG SBCL_ARCH=x86-64
 
 # Install dependencies
