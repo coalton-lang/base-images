@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/coalton-lang/base-image
 LABEL org.opencontainers.image.description="CCL base image for Coalton CI"
 LABEL org.opencontainers.image.licenses=MIT
 
-ARG CCL_VERSION=1.13
+ARG CCL_VERSION=1.14
 
 # Install dependencies
 ARG DEBIAN_FRONTEND=noninteractive
